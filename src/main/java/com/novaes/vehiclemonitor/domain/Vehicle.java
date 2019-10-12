@@ -5,6 +5,8 @@
  */
 package com.novaes.vehiclemonitor.domain;
 
+import java.util.Random;
+
 /**
  *
  * @author andre
@@ -14,20 +16,24 @@ public class Vehicle {
     private final String id;
     private final String registrationNumber;
     private final VehicleStatus status;
-    private Customer owner;
+    private final Integer idCustomer;
 
-    public Vehicle(String id, String registrationNumber) {
+    public Vehicle() {
+        this.id = null;
+        this.registrationNumber = null;
+        this.status = null;
+        this.idCustomer = null;
+    }
+
+    public Vehicle(String id, String registrationNumber, Integer idCustomer) {
         this.id = id;
         this.registrationNumber = registrationNumber;
         this.status = VehicleStatus.OFF;
+        this.idCustomer = idCustomer;
     }
 
     public String getId() {
         return id;
-    }
-
-    public Customer getOwner() {
-        return owner;
     }
 
     public String getRegistrationNumber() {
@@ -35,11 +41,12 @@ public class Vehicle {
     }
 
     public VehicleStatus getStatus() {
-        return status;
+        Random gerador = new Random();
+        return VehicleStatus.values()[gerador.nextInt(2)];
     }
 
-    void belongsTo(Customer owner) {
-        this.owner = owner;
+    public Integer getIdCustomer() {
+        return idCustomer;
     }
 
 }
