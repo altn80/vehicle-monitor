@@ -11,8 +11,6 @@ import com.novaes.vehiclemonitor.domain.customer.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.novaes.vehiclemonitor.domain.vehicle.Vehicle;
-import com.novaes.vehiclemonitor.domain.vehicle.VehicleStatus;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -25,6 +23,7 @@ import com.novaes.vehiclemonitor.domain.customer.CustomerRepository;
  * @author andre
  */
 @RestController
+@CrossOrigin(origins = "*")
 public class CustomerController {
 
     @Autowired
@@ -42,13 +41,12 @@ public class CustomerController {
         customers.forEach(customerRepository::add);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/customers")
     public List<Customer> customers() {
         return customerRepository.findAllCustomers();
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    
     @GetMapping("/customers/{id}")
     public Customer customersById(@PathVariable Integer id) {
         return customerRepository.findCustomerById(id);

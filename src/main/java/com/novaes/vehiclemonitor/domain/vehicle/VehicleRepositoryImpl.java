@@ -38,6 +38,11 @@ public class VehicleRepositoryImpl implements VehicleRepository {
         }
         this.vehicles.add(vehicle);
     }
+    
+    @Override
+    public List<Vehicle> findAll() {
+        return this.vehicles;
+    }
 
     @Override
     public List<Vehicle> findVehicles(Integer idCustomer) {
@@ -54,6 +59,8 @@ public class VehicleRepositoryImpl implements VehicleRepository {
                 .filter(vehicle -> Objects.equals(vehicle.getIdCustomer(), idCustomer) && vehicle.getStatus() == status)
                 .collect(Collectors.toList());
     }
+
+    
     
 
 }

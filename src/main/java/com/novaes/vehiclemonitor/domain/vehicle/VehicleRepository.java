@@ -14,6 +14,8 @@ import java.util.List;
 public interface VehicleRepository {
 
     public void add(Vehicle vehicke);
+    
+    public List<Vehicle> findAll();
 
     public List<Vehicle> findVehicles(Integer idCustomer);
 

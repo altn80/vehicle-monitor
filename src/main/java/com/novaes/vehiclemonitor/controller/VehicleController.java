@@ -15,15 +15,16 @@ import com.novaes.vehiclemonitor.domain.vehicle.VehicleStatus;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import com.novaes.vehiclemonitor.domain.vehicle.VehicleRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 /**
  *
  * @author andre
  */
 @RestController
+@CrossOrigin(origins = "*")
 public class VehicleController {
 
     @Autowired
@@ -41,13 +42,11 @@ public class VehicleController {
         vehicles.forEach(vehicleRepository::add);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/vehicles/{idCustomer}")
     public List<Vehicle> vehiclesByCustomer(@PathVariable Integer idCustomer) {
         return vehicleRepository.findVehicles(idCustomer);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/vehicles/{idCustomer}/{status}")
     public List<Vehicle> vehiclesByStatus(@PathVariable Integer idCustomer, @PathVariable String status) {
         return vehicleRepository.findVehicles(idCustomer, VehicleStatus.valueOf(status));

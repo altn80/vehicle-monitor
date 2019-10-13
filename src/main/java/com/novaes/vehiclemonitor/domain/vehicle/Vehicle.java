@@ -15,7 +15,7 @@ public class Vehicle {
 
     private final String id;
     private final String registrationNumber;
-    private final VehicleStatus status;
+    private VehicleStatus status;
     private final Integer idCustomer;
 
     public Vehicle() {
@@ -41,12 +41,15 @@ public class Vehicle {
     }
 
     public VehicleStatus getStatus() {
-        Random gerador = new Random();
-        return VehicleStatus.values()[gerador.nextInt(2)];
+       return this.status;
     }
 
     public Integer getIdCustomer() {
         return idCustomer;
+    }
+    
+    public void updateStatus(VehicleStatus status) {
+        this.status = status;
     }
 
 }
