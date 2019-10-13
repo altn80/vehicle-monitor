@@ -20,23 +20,23 @@ import com.novaes.vehiclemonitor.domain.customer.CustomerRepository;
  */
 public class CustomerRepositoryTest {
 
-    private CustomerRepository customerVehicleRepository;
+    private CustomerRepository customerRepository;
 
     @Before
     public void init() {
-        this.customerVehicleRepository = new CustomerRepositoryImpl();
+        this.customerRepository = new CustomerRepositoryImpl();
     }
 
     @After
     public void destroy() {
-        this.customerVehicleRepository = null;
+        this.customerRepository = null;
     }
 
     @Test
     public void testAddCustomer() {
         Customer customer = new Customer(1, "Customer 1", "100 Bay Street");
-        customerVehicleRepository.add(customer);
-        Assert.assertThat(customer, is(customerVehicleRepository.findCustomerById(1)));
+        customerRepository.add(customer);
+        Assert.assertThat(customer, is(customerRepository.findCustomerById(1)));
     }
 
 }
