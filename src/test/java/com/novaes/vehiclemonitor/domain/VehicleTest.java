@@ -5,6 +5,7 @@
  */
 package com.novaes.vehiclemonitor.domain;
 
+import com.novaes.vehiclemonitor.domain.vehicle.Vehicle;
 import static org.hamcrest.CoreMatchers.is;
 import org.junit.Assert;
 import org.junit.Test;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.novaes.vehiclemonitor.domain;
+package com.novaes.vehiclemonitor.domain.vehicle;
 
 import java.util.Random;
 
