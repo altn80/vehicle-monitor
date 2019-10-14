@@ -5,6 +5,7 @@
  */
 package com.novaes.vehiclemonitor.domain.vehicle;
 
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -13,16 +14,12 @@ import java.util.Random;
  */
 public class Vehicle {
 
-    private final String id;
-    private final String registrationNumber;
+    private String id;
+    private String registrationNumber;
     private VehicleStatus status;
-    private final Integer idCustomer;
+    private Integer idCustomer;
 
     public Vehicle() {
-        this.id = null;
-        this.registrationNumber = null;
-        this.status = null;
-        this.idCustomer = null;
     }
 
     public Vehicle(String id, String registrationNumber, Integer idCustomer) {
@@ -51,5 +48,32 @@ public class Vehicle {
     public void updateStatus(VehicleStatus status) {
         this.status = status;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 13 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Vehicle other = (Vehicle) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 
 }

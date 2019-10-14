@@ -38,5 +38,15 @@ public class CustomerRepositoryTest {
         customerRepository.add(customer);
         Assert.assertThat(customer, is(customerRepository.findCustomerById(1)));
     }
+    
+    @Test
+    public void testFindCustomers() {
+        customerRepository.add(new Customer(1, "Customer 1", "100 Bay Street"));
+        customerRepository.add(new Customer(2, "Customer 2", "100 Bay Street"));
+        customerRepository.add(new Customer(3, "Customer 3", "100 Bay Street"));
+        customerRepository.add(new Customer(4, "Customer 4", "100 Bay Street"));
+        customerRepository.add(new Customer(5, "Customer 5", "100 Bay Street"));
+        Assert.assertThat(5, is(customerRepository.findAllCustomers().size()));
+    }
 
 }

@@ -5,16 +5,9 @@
  */
 package com.novaes.vehiclemonitor.domain.customer;
 
-import com.novaes.vehiclemonitor.domain.customer.Customer;
-import com.novaes.vehiclemonitor.domain.vehicle.Vehicle;
 import java.util.ArrayList;
 import java.util.List;
-import com.novaes.vehiclemonitor.domain.vehicle.VehicleStatus;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Repository;
-import com.novaes.vehiclemonitor.domain.customer.CustomerRepository;
 
 /**
  *
