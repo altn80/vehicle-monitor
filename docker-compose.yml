@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+  vehicle-monitor-backend:
+      image: vehicle-monitor-backend
+      ports:
+        - "8080:8080"
+      build:
+        context: ./vehicle-monitor-backend
+        dockerfile: Dockerfile
+        
+
+  vehicle-monitor-frontend:
+        image: vehicle-monitor-frontend
+        ports:
+            - "4200:4200"
+        build:
+            context: ./vehicle-monitor-frontend
+            dockerfile: Dockerfile
+            
