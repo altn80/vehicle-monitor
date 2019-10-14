@@ -1,0 +1,30 @@
+<div>
+    <label>Customer: </label>
+    <select (change)="filterCustomers($event.target.value)">
+        <option value="0">--All--</option>
+        <option *ngFor="let customer of customersFilter" value={{customer.id}}>
+            {{customer.name}}
+        </option>
+    </select>
+</div>
+
+<div>
+    <label>Status: </label>
+    <select  (change)="updateStatus($event.target.value)">
+        <option value="0" selected>--All--</option>
+        <option value="ON">ON</option>
+        <option value="OFF">OFF</option>
+    </select>
+</div>
+
+<hr>
+
+<mat-card class="example-card" *ngFor="let customer of customers">
+    <mat-card-header>
+        <mat-card-title><b>{{customer.name}}</b></mat-card-title>
+        <mat-card-subtitle><b>{{customer.address}}</b></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <app-vehicles [customer]="customer" [status]="status"></app-vehicles>
+    </mat-card-content>
+</mat-card>

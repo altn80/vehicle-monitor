@@ -1,0 +1,11 @@
+<table style="width: 100%;">
+    <th style="text-align: left;">VIN (VehicleId)</th>
+    <th style="text-align: left;">Reg. nr.</th>
+    <th style="text-align: left;">Status</th>
+    <tr *ngFor="let vehicle of vehicles" [ngClass]="(vehicle.status=='ON')?'text-success':'text-danger'">
+        <td>{{vehicle.id}}</td>
+        <td>{{vehicle.registrationNumber}}</td>
+        <td>{{vehicle.status}}</td>
+    </tr>
+
+</table>
