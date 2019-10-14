@@ -14,7 +14,7 @@
 ## Run Instructions
 
   ```
-  docker build . -t vehicle-monitor-backend
-  docker run -p 8080:8080 -t vehicle-monitor-backend
+  sudo docker build . -t vehicle-monitor-backend
+  sudo docker run -p 8080:8080 -t vehicle-monitor-backend
 
   ```
