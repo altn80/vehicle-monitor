@@ -5,7 +5,6 @@
  */
 package com.novaes.vehiclemonitor.repository;
 
-import com.novaes.vehiclemonitor.domain.customer.Customer;
 import com.novaes.vehiclemonitor.domain.vehicle.Vehicle;
 import static org.hamcrest.core.Is.is;
 import org.junit.After;
@@ -37,7 +36,7 @@ public class VehicleRepositoryTest {
     public void testAddVehicle() {
         Vehicle vehicle = new Vehicle("1", "Vehicle 1", 1);
         vehicleRepository.add(vehicle);
-        Assert.assertThat(vehicle, is(vehicleRepository.findVehicles(1)));
+        Assert.assertThat(vehicle, is(vehicleRepository.findVehicles(1).get(0)));
     }
     
     @Test
