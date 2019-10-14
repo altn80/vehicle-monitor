@@ -1,4 +1,6 @@
-# vehicle-monitor
+# vehicle-monitor 
+
+ http://localhost:4200/
 
 ## Build/Run Requirements
 * apache maven 3
@@ -26,3 +28,4 @@
   ```
   docker-compose up
   ```
+
